@@ -23,6 +23,6 @@ from django.urls import path, include
 #Assim, cada aplicação tem seu arquivo de rotas separadamente
 
 urlpatterns = [
-    path('admin/', admin.site.urls),    
+    path('PainelAdm/', admin.site.urls),    
     path('', include('core.urls')),
 ]

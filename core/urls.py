@@ -4,7 +4,8 @@ from .views import index, contato, produto
 
 
 urlpatterns = [
-    path('', index),
-    path('contato', contato),
-    path('produto', produto),    
+    path('', index, name='index'),
+    path('contato', contato, name='contato'),
+    #path('produto', produto),
+    path('produto/<int:pk>', produto, name='produto'),    
 ]
