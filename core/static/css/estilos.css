@@ -1,9 +1,13 @@
 body{
     background-color:darkgoldenrod;
     color:blue
-
 }
 
+h1{
+    color: darkblue;
+    text-align: center;
+}
+ 
 a{
     text-decoration: none;
     color: white;

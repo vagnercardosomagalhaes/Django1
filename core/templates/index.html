@@ -4,32 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJANGO1 - INDEX</title>
-    <img src="{% static 'images/django.png' %}">
+    <title>DJANGO1 - INDEX</title>    
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
-    <h1>INDEX</h1>
-    <h2>{{ curso }}</h2> 
-    <table>
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Preço</th>
-                <th>Qtde</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for produto in produtos  %}
-                <tr>   
-                    <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
-                    <td>{{ produto.preco }}</td>
-                    <td>{{ produto.QtdeEstoque }}</td>
+    <center>        
+        <h1>INDEX</h1>
+        <img src="{% static 'images/django.png' %}">
+        <h2>{{ curso }}</h2> 
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Qtde</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <button onclick="teste();">Clique aqui</button>
+            </thead>
+            <tbody>
+                {% for produto in produtos  %}
+                    <tr>   
+                        <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                        <td>{{ produto.preco }}</td>
+                        <td>{{ produto.QtdeEstoque }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button onclick="teste();">Clique aqui</button>
+    </center>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>        
 </body>
 </html>

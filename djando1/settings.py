@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j*bhiehdhk2oaim@ve+o9$=o914#6u2emmhzd^i6^v-k1%3$6%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # se colocar false aqui, ALLAWED_HOST DEVE SER CONFIGURADA
+DEBUG = False # se colocar false aqui, ALLAWED_HOST DEVE SER CONFIGURADA
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # Pode ser configurado para um domínio específico, ex: ['www.seudominio.com']
 
 
 # Application definition
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Adiciona suporte a arquivos estáticos
+    'django.middleware.cache.UpdateCacheMiddleware',  # Middleware para cache
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
